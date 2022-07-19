@@ -1,34 +1,35 @@
 HELP = """
-help - напечатать справку по программе
-add - добавить задачу в список(название задачи запрашиваем у пользователя)
-show - напечатать все добавленные задачи
+Список доступных команд:
+* print - напечатать все задачи на заданную дату
+* todo - добавить задачу
+* help - напечатать help
 """
 
-run = True
+today = list()
+tomorrow = list()
+other = list()
 
-tasks = []
-today = []
-tomorrow = []
-other = []
-
-while run:
-    command = input('Введите команду: ')
+while True:
+    command = input('Введите команду\n')
     if command == 'help':
         print(HELP)
-    elif command == 'show':
-        print(tasks, today, tomorrow, other)
-    elif command == 'add':
-        when = input('Введите дату выполнения задачи: ')
-        if when == 'Сегодня':
-            task = input('Введите название задачи: ')
+    elif command == 'todo':
+        date = input('Введите дату выполнения задачи: ')
+        task = input('Введите задачу')
+        if date == 'Сегодня':
             today.append(task)
-        elif when == 'Завтра':
-            task = input('Введите название задачи: ')
+        elif date == 'Завтра':
             tomorrow.append(task)
-        elif when not in 'Сегодня' and when not in 'Завтра':
-            task = input('Введите название задачи: ')
+        else:
             other.append(task)
-        print('Задача добавлена')
+        print(f'Задача {task} добавлена')
+    elif command == 'show':
+        print('Сегодня')
+        print(today)
+        print('Завтра')
+        print(tomorrow)
+        print('Другие')
+        print(other)
     elif command == 'exit':
         print('Спасибо за использования! До свидания!')
         break
