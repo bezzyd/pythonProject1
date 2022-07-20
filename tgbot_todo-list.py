@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('')
+bot = telebot.TeleBot('5426131943:AAFZUjAZOtkGnwgtZsavbK57OAi55Kfl6ts')
 
 HELP = """
 Список доступных команд:
