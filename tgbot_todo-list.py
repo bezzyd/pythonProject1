@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('5426131943:AAFZUjAZOtkGnwgtZsavbK57OAi55Kfl6ts')
+bot = telebot.TeleBot('')
 
 HELP = """
 Список доступных команд:
@@ -38,7 +38,7 @@ def show(message):
         tasks = todos.get(date)
         response += f'{date}: \n'
         for task in tasks:
-            response += f'[] {task}\n'
+            response += f'* {task}\n'
         response += '\n'
     bot.send_message(message.chat.id, response)
 
